@@ -1,18 +1,11 @@
 import React from 'react';
 import {SafeAreaView, View, Image, Text, StyleSheet} from 'react-native';
+import ListaProdutos from './views/ListaProdutos';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.containerTitle}>
-        <Text style={styles.title}>Lighteria</Text>
-        <View style={styles.containerBag}>
-          <Image
-            source={require('./assets/images/icone-sacola.png')}
-            style={styles.image}
-          />
-        </View>
-      </View>
+      <ListaProdutos />
     </SafeAreaView>
   );
 };
@@ -20,13 +13,13 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f4f0f4',
+    backgroundColor: '#F4F0F4',
   },
   containerTitle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 24,
+    padding: 24,
   },
   title: {
     fontFamily: 'OpenSans-ExtraBold',
@@ -37,9 +30,28 @@ const styles = StyleSheet.create({
     width: 30,
   },
   containerBag: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     padding: 18,
     borderRadius: 30,
+  },
+  containerDescription: {
+    paddingHorizontal: 24,
+  },
+  separator: {
+    borderWidth: 0.5,
+    borderColor: '#A1A5AA',
+  },
+  containerTextDescription: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: -46,
+  },
+  textDescription: {
+    padding: 34,
+    backgroundColor: '#F4F0F4',
+    fontSize: 16,
+    fontFamily: 'OpenSans-Regular',
+    color: '#A1A5AA',
   },
 });
 
