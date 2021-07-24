@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
+import { COR_DE_FUNDO } from '../../styles/styles';
 import {DATA} from '../../utils/data';
 import Cabecalho from './componentes/Cabecalho';
 import {Produto} from './componentes/Produto';
@@ -21,6 +22,7 @@ const ListaProdutos = () => {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 24,
+    backgroundColor: COR_DE_FUNDO
   },
 });
 

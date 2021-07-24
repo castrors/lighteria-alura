@@ -1,57 +1,38 @@
 import React from 'react';
 import {SafeAreaView, View, Image, Text, StyleSheet} from 'react-native';
 import ListaProdutos from './views/ListaProdutos';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {COR_DE_FUNDO} from './styles/styles';
+import {DetalhesProduto} from './views/DetalhesProduto';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ListaProdutos />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <Stack.Navigator initialRoute="ListaProdutos">
+          <Stack.Screen
+            name="ListaProdutos"
+            component={ListaProdutos}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DetalhesProduto"
+            component={DetalhesProduto}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F0F4',
-  },
-  containerTitle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 24,
-  },
-  title: {
-    fontFamily: 'OpenSans-ExtraBold',
-    fontSize: 28,
-  },
-  image: {
-    height: 30,
-    width: 30,
-  },
-  containerBag: {
-    backgroundColor: '#FFF',
-    padding: 18,
-    borderRadius: 30,
-  },
-  containerDescription: {
-    paddingHorizontal: 24,
-  },
-  separator: {
-    borderWidth: 0.5,
-    borderColor: '#A1A5AA',
-  },
-  containerTextDescription: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: -46,
-  },
-  textDescription: {
-    padding: 34,
-    backgroundColor: '#F4F0F4',
-    fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
-    color: '#A1A5AA',
+    backgroundColor: COR_DE_FUNDO,
   },
 });
 
